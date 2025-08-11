@@ -4,6 +4,7 @@
 - **Check `tasks.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
 - **Use consistent naming conventions, file structure, and architecture patterns** as described in `planning.md`.
 - **Use uv** (the virtual environment and package manager) whenever executing Python commands, including for unit tests.
+- At the start of a new session, install the virtual environment using uv and pyproject.toml.
 
 ### 🧱 Code Structure & Modularity
 
@@ -26,6 +27,8 @@
 
 - **Mark completed tasks in `tasks.md`** immediately after finishing them.
 - Add new sub-tasks or TODOs discovered during development to `tasks.md` under a “Discovered During Work” section.
+- Add new dependencies installed via uv pip install during this task to pyproject.toml
+- Append summary of changes to `done.md`.
 
 ### 📎 Style & Conventions
 

@@ -11,7 +11,10 @@ This document outlines the development plan for the WhoFi project, breaking it d
   * [x] Set up venv isolated Python environment.
   * [x] Install core dependencies: pytorch, numpy.
 * \[ \] **Task 1.2: Data Ingestion**
-  * \[ \] Write a script to download and unpack the NTU-Fi HID dataset.
+  * \[ \] Write a script to download and unpack the NTU-Fi HID dataset from a google drive location.
+    * the full dataset is at google drive id=1IKTg5M7vDdZPnt6649i2Z3jiR4Fivsy1
+    * a limited (only 1 out of 15 parts) version of the dataset is at google drive id=1ZnDpn9CxoT0hrLSeGV1hcif2DGjg6Xlk
+    * per default, only download the limited dataset because of limited storage space
   * \[ \] Implement a PyTorch Dataset class (NTUFiDataset) to load samples and labels.
 * \[ \] **Task 1.3: Data Processing & Preparation**
   * \[ \] Implement the data flattening logic ((3, 114, P) \-\> (P, 342)) within the Dataset class.
