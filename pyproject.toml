@@ -6,12 +6,20 @@ dependencies = [
     "gdown",
     "numpy",
     "requests",
-    "torch @ https://download.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp312-cp312-linux_x86_64.whl#sha256=d16223b313462f243f78acef98a85354e6a4b8c9b83b38c3866b865f3f019f2d",
+    "torch",
+    "torchvision",
+    "torchaudio",
     "tqdm",
     "typing-extensions",
-    "urllib3"
+    "urllib3",
+    "scipy",
+    "hampel"
 ]
 
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["who_fi*"]
+exclude = ["data*"]

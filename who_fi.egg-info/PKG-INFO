@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: who_fi
+Version: 0.1.0
+Summary: A reimplementation of the WhoFi paper for person re-identification using Wi-Fi CSI.
+Requires-Dist: gdown
+Requires-Dist: numpy
+Requires-Dist: requests
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: torchaudio
+Requires-Dist: tqdm
+Requires-Dist: typing-extensions
+Requires-Dist: urllib3
+Requires-Dist: scipy
+Requires-Dist: hampel
