@@ -6,10 +6,10 @@ This document outlines the development plan for the WhoFi project, breaking it d
 
 **Goal:** Set up the development environment and create a robust data loading and processing pipeline for the NTU-Fi dataset.
 
-* \[ \] **Task 1.1: Environment Setup**
-  * \[ \] Create a README.md with a project overview.
-  * \[ \] Set up venv isolated Python environment.
-  * \[ \] Install core dependencies: pytorch, numpy.
+* [x] **Task 1.1: Environment Setup**
+  * [x] Create a README.md with a project overview.
+  * [x] Set up venv isolated Python environment.
+  * [x] Install core dependencies: pytorch, numpy.
 * \[ \] **Task 1.2: Data Ingestion**
   * \[ \] Write a script to download and unpack the NTU-Fi HID dataset.
   * \[ \] Implement a PyTorch Dataset class (NTUFiDataset) to load samples and labels.
