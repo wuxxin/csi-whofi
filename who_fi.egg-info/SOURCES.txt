@@ -1,7 +1,9 @@
 README.md
 pyproject.toml
+tests/test_model.py
 who_fi/__init__.py
 who_fi/data.py
+who_fi/model.py
 who_fi.egg-info/PKG-INFO
 who_fi.egg-info/SOURCES.txt
 who_fi.egg-info/dependency_links.txt
