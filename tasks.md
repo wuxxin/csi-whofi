@@ -26,15 +26,15 @@ This document outlines the development plan for the WhoFi project, breaking it d
 
 **Goal:** Implement the complete WhoFi Transformer model in PyTorch.
 
-* \[ \] **Task 2.1: Implement Transformer Components**
-  * \[ \] Create the PositionalEncoding module.
-  * \[ \] Build the main TransformerEncoder layer using PyTorch's built-in modules.
-* \[ \] **Task 2.2: Implement Signature Module**
-  * \[ \] Add the final fully connected layer (signature\_fc) to map encoder output to the signature dimension.
-  * \[ \] Add the L2-normalization step to the forward pass.
-* \[ \] **Task 2.3: Assemble the Full Model (WhoFiTransformer)**
-  * \[ \] Combine the input projection, positional encoding, encoder, and signature module into a single nn.Module.
-  * \[ \] Write unit tests to ensure the model accepts correct input shapes and produces the expected output shape.
+* [x] **Task 2.1: Implement Transformer Components**
+  * [x] Create the PositionalEncoding module.
+  * [x] Build the main TransformerEncoder layer using PyTorch's built-in modules.
+* [x] **Task 2.2: Implement Signature Module**
+  * [x] Add the final fully connected layer (signature\_fc) to map encoder output to the signature dimension.
+  * [x] Add the L2-normalization step to the forward pass.
+* [x] **Task 2.3: Assemble the Full Model (WhoFiTransformer)**
+  * [x] Combine the input projection, positional encoding, encoder, and signature module into a single nn.Module.
+  * [x] Write unit tests to ensure the model accepts correct input shapes and produces the expected output shape.
 
 ### **Milestone 3: Training & Evaluation Pipeline**
 

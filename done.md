@@ -20,3 +20,13 @@
   - Implemented optional data augmentation techniques (Gaussian noise, scaling, time-shift).
   - Updated `pyproject.toml` to handle package discovery correctly and add new dependencies.
 - **Outcome:** The project now has a fully functional data pipeline, capable of loading raw CSI data and preparing it for model training with optional cleaning and augmentation.
+
+### Task: 2.1, 2.2 & 2.3 Core Model Implementation (2025-08-11)
+- **Action:** Implemented the core WhoFiTransformer model architecture in PyTorch.
+- **Changes:**
+  - Created `who_fi/model.py` to house the model components.
+  - Implemented a standard `PositionalEncoding` module.
+  - Built the `WhoFiTransformer` class, which includes an input projection layer, the positional encoding, a `TransformerEncoder`, and a final signature layer with L2 normalization.
+  - Created `tests/test_model.py` with unit tests for the model.
+  - The tests verify model instantiation, correct output shape, and proper L2 normalization of the output signatures.
+- **Outcome:** The project now has a complete and tested implementation of the Transformer model, ready for the training and evaluation pipeline.
