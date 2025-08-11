@@ -40,16 +40,16 @@ This document outlines the development plan for the WhoFi project, breaking it d
 
 **Goal:** Develop the complete training and evaluation loop.
 
-* \[ \] **Task 3.1: Implement Custom Sampler**
-  * \[ \] Create the InBatchSampler class to generate query/gallery pairs for the loss function.
-* \[ \] **Task 3.2: Implement Loss and Metrics**
-  * \[ \] Write the logic for the in-batch negative loss using the similarity matrix and nn.CrossEntropyLoss.
-  * \[ \] Create a function calculate\_metrics to compute Rank-1, Rank-3, Rank-5, and mAP.
-* \[ \] **Task 3.3: Build Training & Evaluation Scripts**
-  * \[ \] Create train.py with the main training loop, optimizer, and learning rate scheduler.
-  * \[ \] Integrate the evaluation function to run at the end of each epoch.
-  * \[ \] Add logging to track loss and metrics over time (e.g., to console or a log file).
-  * \[ \] Implement checkpointing to save the best performing model weights.
+* [x] **Task 3.1: Implement Custom Sampler**
+  * [x] Create the InBatchSampler class to generate query/gallery pairs for the loss function.
+* [x] **Task 3.2: Implement Loss and Metrics**
+  * [x] Write the logic for the in-batch negative loss using the similarity matrix and nn.CrossEntropyLoss.
+  * [x] Create a function calculate\_metrics to compute Rank-1, Rank-3, Rank-5, and mAP.
+* [x] **Task 3.3: Build Training & Evaluation Scripts**
+  * [x] Create train.py with the main training loop, optimizer, and learning rate scheduler.
+  * [x] Integrate the evaluation function to run at the end of each epoch.
+  * [x] Add logging to track loss and metrics over time (e.g., to console or a log file).
+  * [x] Implement checkpointing to save the best performing model weights.
 
 ### **Milestone 4: Benchmarking & Finalization**
 
