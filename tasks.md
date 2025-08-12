@@ -53,8 +53,8 @@ This document outlines the development plan for the WhoFi project, breaking it d
 
 **Goal:** Replicate the paper's results, perform ablation studies, and finalize the codebase.
 
-* [] **Task 4.1: Replicate Paper Results**
-  * [ ] Run the training script for 2 epochs and eval_interval of 2, to see if training works in general.
+* [ ] **Task 4.1: Replicate Paper Results**
+  * [x] Run the training script for 2 epochs and eval_interval of 2, to see if training works in general.
   * [ ] Run the full training script on the NTU-Fi dataset with the optimal configuration (1-layer Transformer, no filtering/augmentation).
   * [ ] Compare results against the paper's benchmark (Rank-1: 95.5%, mAP: 88.4%).
   * [ ] Tune hyperparameters if necessary to match performance.
