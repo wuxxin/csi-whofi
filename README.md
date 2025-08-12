@@ -71,3 +71,12 @@ To evaluate a trained model checkpoint, use the `evaluate.py` script. You must p
 ```
 
 This will load the model, run it on the test set, and print the final re-identification metrics (Rank-k and mAP).
+
+## Evaluation
+
+The model's performance is measured using standard person re-identification metrics:
+
+*   **Rank-k Accuracy (k=1, 3, 5):** Measures if the correct person is identified within the top-k most similar results.
+*   **Mean Average Precision (mAP):** Provides a comprehensive score of the model's ability to rank the correct person higher than incorrect ones.
+
+For a detailed explanation of these metrics and how they are calculated in this project, please see the [Evaluation Metrics Explained](explanation.md) document.
