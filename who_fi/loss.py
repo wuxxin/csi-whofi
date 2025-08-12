@@ -65,14 +65,20 @@ class InBatchNegativeLoss(nn.Module):
         gallery = reshaped_signatures[:, 1, :]
 
         # Similarity matrix between queries and gallery
-        sim_matrix_qg = torch.matmul(queries, gallery.T) / self.temperature
+        sim_qg = torch.matmul(queries, gallery.T) / self.temperature
+
+        # Similarity matrix between gallery and queries (for symmetric loss)
+        sim_gq = torch.matmul(gallery, queries.T) / self.temperature
 
         # The ground truth is that the i-th query matches the i-th gallery item.
         # This corresponds to the diagonal of the similarity matrix.
-        # The target labels are therefore [0, 1, 2, ..., N-1].
         targets = torch.arange(num_persons).to(signatures.device)
 
-        # Calculate cross-entropy loss
-        loss = self.criterion(sim_matrix_qg, targets)
+        # Calculate cross-entropy loss for both directions
+        loss_qg = self.criterion(sim_qg, targets)
+        loss_gq = self.criterion(sim_gq, targets)
+
+        # Average the two losses for a symmetric loss
+        loss = (loss_qg + loss_gq) / 2
 
         return loss
