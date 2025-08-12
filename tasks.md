@@ -56,18 +56,17 @@ This document outlines the development plan for the WhoFi project, breaking it d
 **Goal:** Replicate the paper's results, perform ablation studies, and finalize the codebase.
 
 * [x] **Task 4.1: Replicate Paper Results**
-  * [x] Run the full training script on the NTU-Fi dataset with the optimal configuration (1-layer Transformer, no filtering/augmentation).
-  * [ ] Compare results against the paper's benchmark (Rank-1: 95.5%, mAP: 88.4%). *(Skipped due to limited dataset)*
-  * [ ] Tune hyperparameters if necessary to match performance. *(Skipped due to limited dataset)*
-* [x] **Task 4.2: Conduct Ablation Studies**
-  * [ ] Run experiments with and without amplitude filtering. *(Skipped due to limited dataset)*
-  * [ ] Run experiments with and without data augmentation. *(Skipped due to limited dataset)*
-  * [ ] Run experiments with different packet sizes (e.g., 100, 500, 1000). *(Skipped due to limited dataset)*
-  * [ ] Document all results in a new results.md file. *(Skipped due to limited dataset)*
+  * [ ] Run the full training script on the NTU-Fi dataset with the optimal configuration (1-layer Transformer, no filtering/augmentation).
+  * [ ] Compare results against the paper's benchmark (Rank-1: 95.5%, mAP: 88.4%).
+  * [ ] Tune hyperparameters if necessary to match performance.
+* [] **Task 4.2: Conduct Ablation Studies**
+  * [ ] Run experiments with and without amplitude filtering.
+  * [ ] Run experiments with and without data augmentation.
+  * [ ] Run experiments with different packet sizes (e.g., 100, 500, 1000).
+  * [ ] Document all results in a new results.md file.
 * [x] **Task 4.3: Code Refactoring & Cleanup**
   * [x] Refactor code for clarity, efficiency, and adherence to PEP 8 standards.
   * [x] Add comprehensive docstrings and comments to all functions and classes.
-  * [x] Create a requirements.txt file.
 * [x] **Task 4.4: Finalize Documentation**
   * [x] Update README.md with final results and detailed instructions on how to set up the environment, train the model, and run the evaluation.
-  * [x] Create a license file (e.g., MIT, Apache 2.0).
+  * [x] Create a license file (MIT).
