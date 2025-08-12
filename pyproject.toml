@@ -12,8 +12,7 @@ dependencies = [
     "tqdm",
     "typing-extensions",
     "urllib3",
-    "scipy",
-    "hampel"
+    "scipy"
 ]
 
 [build-system]

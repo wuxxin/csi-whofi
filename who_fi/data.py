@@ -4,7 +4,6 @@ import torch
 import numpy as np
 from scipy.io import loadmat
 from torch.utils.data import Dataset
-from hampel import hampel
 
 class NTUFiDataset(Dataset):
     """
@@ -17,14 +16,12 @@ class NTUFiDataset(Dataset):
     Args:
         root_dir (str): The root directory of the dataset (e.g., 'data/NTU-Fi-HumanID').
         split (str): The dataset split to load, either 'train' or 'test'.
-        apply_hampel (bool): Whether to apply the Hampel filter for outlier removal.
         augment (bool): Whether to apply data augmentation (only for training split).
         transform (callable, optional): Optional transform to be applied on a sample.
     """
-    def __init__(self, root_dir, split='train', apply_hampel=False, augment=False, transform=None):
+    def __init__(self, root_dir, split='train', augment=False, transform=None):
         self.root_dir = root_dir
         self.split = split
-        self.apply_hampel = apply_hampel
         self.augment = augment and self.split == 'train' # Augmentation only for training
         self.transform = transform
         self.samples = []
@@ -83,35 +80,24 @@ class NTUFiDataset(Dataset):
     def __getitem__(self, idx):
         """
         Retrieves a sample and its label at the given index.
+        The data is loaded as (features, packets) and needs to be
+        transposed to (packets, features) for the model.
         """
         csi_sample = self.samples[idx].copy()
         label = self.labels[idx]
 
-        # Ensure data is in (antennas, subcarriers, packets) format
-        if csi_sample.shape[0] != 3 or csi_sample.shape[1] != 114:
-            if csi_sample.shape[1] == 114 and csi_sample.shape[2] == 3:
-                csi_sample = np.transpose(csi_sample, (2, 1, 0))
-            else:
-                raise ValueError(f"Unexpected sample shape: {csi_sample.shape}")
-
-        # Apply Hampel filter if enabled
-        if self.apply_hampel:
-            # The filter works on 1D data, so we apply it to each subcarrier stream
-            for i in range(csi_sample.shape[0]):
-                for j in range(csi_sample.shape[1]):
-                    res = hampel(csi_sample[i, j, :], window_size=5, n_sigma=3.0)
-                    csi_sample[i, j, :] = res.filtered_data
-
-        # Flatten the data: (3, 114, P) -> (P, 342)
-        num_packets = csi_sample.shape[2]
-        flattened_sample = csi_sample.transpose(2, 0, 1).reshape(num_packets, -1)
+        # Data is loaded as (342, P), transpose to (P, 342)
+        if csi_sample.shape[0] == 342:
+            processed_sample = csi_sample.T
+        else:
+            raise ValueError(f"Unexpected sample shape: {csi_sample.shape}")
 
         # Apply augmentations if enabled for the training set
         if self.augment:
-            flattened_sample = self._apply_augmentations(flattened_sample)
+            processed_sample = self._apply_augmentations(processed_sample)
 
         # Convert to torch tensor
-        sample_tensor = torch.from_numpy(flattened_sample).float()
+        sample_tensor = torch.from_numpy(processed_sample).float()
         label_tensor = torch.tensor(label, dtype=torch.long)
 
         if self.transform:
