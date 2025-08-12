@@ -80,9 +80,9 @@ class WhoFiTransformer(nn.Module):
         # Pass through transformer encoder
         output = self.transformer_encoder(src)
 
-        # Take the output of the first token (analogous to a CLS token)
-        # as the representation of the whole sequence.
-        output = output[0, :, :]
+        # Average the output of all tokens to get a fixed-size representation
+        # of the sequence.
+        output = output.mean(dim=0)
 
         # Generate the signature
         signature = self.signature_fc(output)
