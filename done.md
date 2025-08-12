@@ -55,3 +55,14 @@
   - Added an MIT `LICENSE` file.
   - Performed a final code review and cleanup.
 - **Outcome:** The project is now complete and fully documented. While benchmarking could not be performed due to dataset limitations, the codebase is a robust and reproducible implementation of the WhoFi paper.
+
+### Task: 4.1 Initial Training Run (2025-08-12)
+- **Action:** Ran the initial training script to verify the pipeline.
+- **Changes:**
+  - Installed all dependencies using `uv`.
+  - Downloaded and extracted the full dataset.
+  - Encountered and resolved a CUDA-related PyTorch installation issue by reinstalling the CPU-only version.
+  - Encountered and resolved an out-of-memory error during training by reducing the batch size.
+  - Successfully ran the training script for 2 epochs.
+  - Updated `tasks.md` to reflect the completion of the initial training run.
+- **Outcome:** The training pipeline is confirmed to be working on the full dataset. The system is now ready for full-scale training and benchmarking.
