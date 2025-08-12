@@ -66,3 +66,11 @@
   - Successfully ran the training script for 2 epochs.
   - Updated `tasks.md` to reflect the completion of the initial training run.
 - **Outcome:** The training pipeline is confirmed to be working on the full dataset. The system is now ready for full-scale training and benchmarking.
+
+### Task: Fix Model Training Performance (2025-08-12)
+- **Action:** Investigated and fixed an issue where the model was not learning effectively.
+- **Changes:**
+  - Diagnosed that the `InBatchNegativeLoss` was asymmetric, providing a weak training signal.
+  - Modified the loss function in `who_fi/loss.py` to be symmetric by calculating the loss from query-to-gallery and gallery-to-query and averaging them.
+  - Verified that the new loss function leads to a decreasing training loss over a small number of epochs.
+- **Outcome:** The model's training process is now more robust. The fix addresses a critical flaw that prevented the model from converging, and it should now be able to achieve better performance when trained for the full 300 epochs.
