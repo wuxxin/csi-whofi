@@ -28,7 +28,7 @@
 - **Mark completed tasks in `tasks.md`** immediately after finishing them.
 - Add new sub-tasks or TODOs discovered during development to `tasks.md` under a “Discovered During Work” section.
 - Add new dependencies installed via uv pip install during this task to pyproject.toml
-- Append summary of changes to `done.md`.
+- Append summary of changes to `done.md`, document all encountered problems and solutions.
 
 ### 📎 Style & Conventions
 

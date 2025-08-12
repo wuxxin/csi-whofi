@@ -172,7 +172,7 @@ if __name__ == '__main__':
     # Data and environment
     parser.add_argument('--data_dir', type=str, default='data/NTU-Fi-HumanID', help='Directory for the dataset')
     parser.add_argument('--use_cuda', action='store_true', help='Enable CUDA training')
-    parser.add_argument('--num_workers', type=int, default=2, help='Number of workers for data loading')
+    parser.add_argument('--num_workers', type=int, default=1, help='Number of workers for data loading')
 
     # Training hyperparameters
     parser.add_argument('--augment', action='store_true', help='Enable data augmentation')
