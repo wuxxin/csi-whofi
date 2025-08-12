@@ -44,3 +44,15 @@
     - Logging of results and checkpointing for the best model.
   - Added unit tests for the sampler, loss, and metrics modules.
 - **Outcome:** The project is now capable of end-to-end training and evaluation of the WhoFi model.
+
+### Task: 4.0 Finalization (2025-08-11)
+- **Action:** Finalized the project by cleaning up the codebase, improving documentation, and adding final required files.
+- **Changes:**
+  - Created a standalone `evaluate.py` script for model evaluation.
+  - Updated `README.md` with detailed setup, training, and evaluation instructions.
+  - Added a note to the README clarifying the limitations of the default dataset for full training.
+  - Added a standard Python `.gitignore` configuration.
+  - Generated a `requirements.txt` file for the project.
+  - Added an MIT `LICENSE` file.
+  - Performed a final code review and cleanup.
+- **Outcome:** The project is now complete and fully documented. While benchmarking could not be performed due to dataset limitations, the codebase is a robust and reproducible implementation of the WhoFi paper.
