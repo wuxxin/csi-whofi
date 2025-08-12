@@ -8,7 +8,7 @@ To create a world where human identification can be performed accurately and rel
 
 ### **Mission**
 
-Our mission is to develop and open-source a faithful and high-performance reimplementation of the file "reseach-paper.md" describing the **WhoFi** research project.
+Our mission is to develop and open-source a faithful and high-performance reimplementation of the file "research-paper.md" describing the **WhoFi** research project.
 
 This project will serve as a foundational, reproducible benchmark for the academic and research communities, accelerating innovation in privacy-preserving biometric sensing and person re-identification.
 

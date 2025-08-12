@@ -7,7 +7,6 @@
   - Installed `pytorch` (CPU) and `numpy` dependencies.
   - Updated `tasks.md` to mark the task as complete.
 - **Outcome:** The project foundation is now in place, ready for the data ingestion pipeline development.
-- **Submission:** Changes were submitted for review.
 
 ### Task: 1.2 & 1.3 Data Pipeline Implementation (2025-08-11)
 - **Action:** Developed the complete data ingestion and processing pipeline for the NTU-Fi dataset.

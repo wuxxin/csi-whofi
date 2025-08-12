@@ -76,4 +76,12 @@ The model's performance is measured using standard person re-identification metr
 *   **Rank-k Accuracy (k=1, 3, 5):** Measures if the correct person is identified within the top-k most similar results.
 *   **Mean Average Precision (mAP):** Provides a comprehensive score of the model's ability to rank the correct person higher than incorrect ones.
 
-For a detailed explanation of these metrics and how they are calculated in this project, please see the [Evaluation Metrics Explained](explanation.md) document.
+- If the correct user is at Rank-1, the AP is 1/1 = 1.0.
+- If the correct user is at Rank-2, the AP is 1/2 = 0.5.
+- If the correct user is at Rank-10, the AP is 1/10 = 0.1.
+
+The **mAP** is simply the average of the AP scores for all query images.
+
+```
+mAP = (Sum of AP for all queries) / (Number of queries)
+```

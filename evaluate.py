@@ -91,7 +91,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_path', type=str, required=True, help='Path to the trained model checkpoint')
     parser.add_argument('--data_dir', type=str, default='data/NTU-Fi-HumanID', help='Directory for the dataset')
     parser.add_argument('--use_cuda', action='store_true', help='Enable CUDA evaluation')
-    parser.add_argument('--batch_size', type=int, default=32, help='Batch size for feature extraction')
+    parser.add_argument('--batch_size', type=int, default=16, help='Batch size for feature extraction')
 
     # Model hyperparameters (must match the trained model)
     parser.add_argument('--d_model', type=int, default=128, help='Dimension of the model')

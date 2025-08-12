@@ -5,14 +5,10 @@ description = "A reimplementation of the WhoFi paper for person re-identificatio
 dependencies = [
     "gdown",
     "numpy",
-    "requests",
+    "scipy"
     "torch",
-    "torchvision",
-    "torchaudio",
     "tqdm",
     "typing-extensions",
-    "urllib3",
-    "scipy"
 ]
 
 [build-system]
