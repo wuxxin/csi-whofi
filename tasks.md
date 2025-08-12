@@ -13,8 +13,6 @@ This document outlines the development plan for the WhoFi project, breaking it d
 * [x] **Task 1.2: Data Ingestion**
   * [x] Write a script to download and unpack the NTU-Fi HID dataset from a google drive location.
     * the full dataset is at google drive id=1IKTg5M7vDdZPnt6649i2Z3jiR4Fivsy1
-    * a limited (only 1 out of 15 parts) version of the dataset is at google drive id=1ZnDpn9CxoT0hrLSeGV1hcif2DGjg6Xlk
-    * per default, only download the limited dataset because of limited storage space
   * [x] Implement a PyTorch Dataset class (NTUFiDataset) to load samples and labels.
 * [x] **Task 1.3: Data Processing & Preparation**
   * [x] Implement the data flattening logic ((3, 114, P) \-\> (P, 342)) within the Dataset class.
@@ -55,7 +53,8 @@ This document outlines the development plan for the WhoFi project, breaking it d
 
 **Goal:** Replicate the paper's results, perform ablation studies, and finalize the codebase.
 
-* [x] **Task 4.1: Replicate Paper Results**
+* [] **Task 4.1: Replicate Paper Results**
+  * [ ] Run the training script for 2 epochs and eval_interval of 2, to see if training works in general.
   * [ ] Run the full training script on the NTU-Fi dataset with the optimal configuration (1-layer Transformer, no filtering/augmentation).
   * [ ] Compare results against the paper's benchmark (Rank-1: 95.5%, mAP: 88.4%).
   * [ ] Tune hyperparameters if necessary to match performance.

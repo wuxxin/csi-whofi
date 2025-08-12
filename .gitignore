@@ -1,4 +1,6 @@
+# Data
 data/
+best_model.pth
 
 # Python
 __pycache__/

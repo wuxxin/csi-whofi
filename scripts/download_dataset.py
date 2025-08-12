@@ -51,6 +51,5 @@ def download_and_unzip_gdrive(file_id, dest_folder="data"):
 
 if __name__ == "__main__":
     # The ID from the user-provided Google Drive link
-    # Per default, only download the limited dataset because of limited storage space
-    GDRIVE_FILE_ID = "1xvV18rjcZT883q9PCrq8QdAbaBexXWE0"
+    GDRIVE_FILE_ID = "1IKTg5M7vDdZPnt6649i2Z3jiR4Fivsy1"
     download_and_unzip_gdrive(GDRIVE_FILE_ID)

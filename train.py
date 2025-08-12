@@ -177,7 +177,7 @@ if __name__ == '__main__':
     # Training hyperparameters
     parser.add_argument('--augment', action='store_true', help='Enable data augmentation')
     parser.add_argument('--epochs', type=int, default=300, help='Number of training epochs')
-    parser.add_argument('--batch_size', type=int, default=8, help='Batch size (P*K, e.g., 4 persons * 2 instances)')
+    parser.add_argument('--batch_size', type=int, default=16, help='Batch size (P*K, e.g., 4 persons * 2 instances)')
     parser.add_argument('--eval_interval', type=int, default=10, help='Run evaluation every N epochs')
     parser.add_argument('--learning_rate', type=float, default=0.0001, help='Initial learning rate')
     parser.add_argument('--lr_step_size', type=int, default=50, help='Step size for LR scheduler')

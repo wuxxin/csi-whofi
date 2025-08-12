@@ -4,7 +4,7 @@
 - **Check `tasks.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
 - **Use consistent naming conventions, file structure, and architecture patterns** as described in `planning.md`.
 - **Use uv** (the virtual environment and package manager) whenever executing Python commands, including for unit tests.
-- At the start of a new session, install the virtual environment using uv and pyproject.toml.
+- At the start of a new session, install the virtual environment using uv and pyproject.toml and clean download cache afterwards to increase storage space.
 
 ### 🧱 Code Structure & Modularity
 
