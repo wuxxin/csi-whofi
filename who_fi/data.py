@@ -61,19 +61,27 @@ class NTUFiDataset(Dataset):
         return len(self.samples)
 
     def _apply_augmentations(self, sample):
-        """Applies a series of augmentations to a given sample."""
-        # Gaussian Noise: N(0, 0.02^2)
-        noise = np.random.normal(0, 0.02, sample.shape).astype(np.float32)
-        sample += noise
+        """
+        Applies one of three augmentations with 90% probability, as per the paper.
+        Uses numpy.random to avoid conflicts with other libraries.
+        """
+        if np.random.rand() < 0.9:
+            # Choose one augmentation to apply
+            aug_choice = np.random.choice(['noise', 'scale', 'shift'])
 
-        # Scaling: Scale by a random factor in [0.9, 1.1]
-        scaling_factor = np.random.uniform(0.9, 1.1)
-        sample *= scaling_factor
-
-        # Time Shift: Shift by a random integer t' in [-5, 5]
-        time_shift = np.random.randint(-5, 6)
-        if time_shift != 0:
-            sample = np.roll(sample, time_shift, axis=0)
+            if aug_choice == 'noise':
+                # Gaussian Noise: N(0, 0.02^2)
+                noise = np.random.normal(0, 0.02, sample.shape).astype(np.float32)
+                sample += noise
+            elif aug_choice == 'scale':
+                # Scaling: Scale by a random factor in [0.9, 1.1]
+                scaling_factor = np.random.uniform(0.9, 1.1)
+                sample *= scaling_factor
+            elif aug_choice == 'shift':
+                # Time Shift: Shift by a random integer t' in [-5, 5]
+                time_shift = np.random.randint(-5, 6)
+                if time_shift != 0:
+                    sample = np.roll(sample, time_shift, axis=0)
 
         return sample
 

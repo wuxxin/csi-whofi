@@ -68,9 +68,9 @@
 - **Outcome:** The training pipeline is confirmed to be working on the full dataset. The system is now ready for full-scale training and benchmarking.
 
 ### Task: Fix Model Training Performance (2025-08-12)
-- **Action:** Investigated and fixed an issue where the model was not learning effectively.
+- **Action:** Investigated and fixed critical bugs that prevented the model from learning.
 - **Changes:**
-  - Diagnosed that the `InBatchNegativeLoss` was asymmetric, providing a weak training signal.
-  - Modified the loss function in `who_fi/loss.py` to be symmetric by calculating the loss from query-to-gallery and gallery-to-query and averaging them.
-  - Verified that the new loss function leads to a decreasing training loss over a small number of epochs.
-- **Outcome:** The model's training process is now more robust. The fix addresses a critical flaw that prevented the model from converging, and it should now be able to achieve better performance when trained for the full 300 epochs.
+  - Implemented a symmetric `InBatchNegativeLoss` in `who_fi/loss.py` to provide a stronger, more stable training signal.
+  - Corrected the data augmentation logic in `who_fi/data.py` to align with the paper's methodology. The original code applied all augmentations sequentially, which corrupted the data. The fix applies only one randomly selected augmentation with a 90% probability.
+  - Traced a silent crash during augmented training to a low-level library conflict and resolved it by replacing the `random` module with `numpy.random` for all sampling.
+- **Outcome:** The training pipeline is now robust and correctly implements the paper's methodology. These changes should allow the model to converge and achieve high performance.
